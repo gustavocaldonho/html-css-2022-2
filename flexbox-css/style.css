@@ -1,3 +1,12 @@
 .flex-container{
     display: flex;
+    width: 70%;
+    height: 60vh;
+    border: 2px solid green;
+    justify-content: center;
+    align-items: center;
+}
+
+body{
+    background-color: #1B3653;
 }
