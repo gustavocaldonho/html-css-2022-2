@@ -44,6 +44,13 @@
         </div>
 
         <div>
+            <!--  Novo campo senha -->
+            <label for="confirmarsenha">Confirme sua Senha:</label>
+            <input type="password" id="confirmarsenha" name="confirmarsenha">
+            <input type="button" id="versenhaconf" name="versenhaconf" value="Mostrar" onpointerover="mostraSenhaConf()" onpointerout="mostraSenhaConf()">
+        </div>
+
+        <div>
             <label for="sexo">Qual o seu sexo?</label>
             <input type="radio" id="sexoM" name="sexo" value="M"> <label for="sexoM">M</label>
             <input type="radio" id="sexoF" name="sexo" value="F" checked> <label for="sexoF">F</label>
@@ -145,28 +152,41 @@
     <script>
         function ola() {
             var nome = document.getElementById("nomecompleto").value;
-            alert("Olá "+nome+"!");
+            alert("Olá " + nome + "!");
         }
 
-        function mudaCor(){
+        function mudaCor() {
             var cor = document.getElementById("cordosolhos").value;
             // alert(cor);
             document.getElementById("corvalor").innerHTML = cor;
         }
 
-        function mostraSenha(){
+        function mostraSenha() {
             var campo = document.getElementById("senha");
             var botao = document.getElementById("versenha");
 
-            if(campo.type == "password"){
+            if (campo.type == "password") {
                 campo.type = "text";
                 botao.value = "Esconder";
             }
-            else{
+            else {
                 campo.type = "password";
                 botao.value = "Mostrar";
             }
-            
+        }
+
+        function mostraSenhaConf() {
+            var campo = document.getElementById("confirmarsenha");
+            var botao = document.getElementById("versenhaconf");
+
+            if (campo.type == "password") {
+                campo.type = "text";
+                botao.value = "Esconder";
+            }
+            else {
+                campo.type = "password";
+                botao.value = "Mostrar";
+            }
         }
     </script>
 
