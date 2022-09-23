@@ -46,8 +46,12 @@
         <div>
             <!--  Novo campo senha -->
             <label for="confirmarsenha">Confirme sua Senha:</label>
-            <input type="password" id="confirmarsenha" name="confirmarsenha">
-            <input type="button" id="versenhaconf" name="versenhaconf" value="Mostrar" onpointerover="mostraSenhaConf()" onpointerout="mostraSenhaConf()">
+            <input type="password" id="confirmarsenha" name="confirmarsenha" oninput="msgSenha()">
+            <input type="button" id="versenhaconf" name="versenhaconf" value="Mostrar" onpointerover="mostraSenhaConf()"
+                onpointerout="mostraSenhaConf()">
+
+            <label for="confirmarsenha" id="msgSenhaIncorreta" hidden>Senha Incorreta!</label>
+            <label for="confirmarsenha" id="msgSenhaCorreta" hidden>Senha Confirmada!</label>
         </div>
 
         <div>
@@ -186,6 +190,22 @@
             else {
                 campo.type = "password";
                 botao.value = "Mostrar";
+            }
+        }
+
+        function msgSenha() {
+            var camposenha = document.getElementById("senha");
+            var camposenhaconf = document.getElementById("confirmarsenha");
+            var msgSenhaIncorreta = document.getElementById("msgSenhaIncorreta");
+            var msgSenhaCorreta = document.getElementById("msgSenhaCorreta");
+
+            if (camposenha.value != camposenhaconf.value) {
+                msgSenhaIncorreta.hidden = false; // mostra
+                msgSenhaCorreta.hidden = true; // esconde
+            }
+            else {
+                msgSenhaIncorreta.hidden = true; // esconde
+                msgSenhaCorreta.hidden = false; // mostra
             }
         }
     </script>
