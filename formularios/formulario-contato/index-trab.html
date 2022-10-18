@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo-trab.css">
+    <title>Formulário de Contato</title>
+    <!-- Nome, celular (com máscara), e-mail, mensagem. Crie também um botão "Enviar". -->
+</head>
+
+<body>
+    <div class="div-principal">
+        <h1>Formulário de Contato</h1>
+
+        <div>
+            <label for="nomeCompleto">Digite seu Nome Completo:</label>
+            <input type="text" id="namoCompleto" name="namoCompleto" size=50 maxlength="100">
+        </div>
+
+        <div>
+            <label for="celular">Celular:</label>
+            <input type="tel" id="celular" name="celular">
+        </div>
+
+        <div>
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" onblur="verificaEmail(this)">
+            <span id="msgEmail" name="msgEmail">""</span>
+        </div>
+
+        <div>
+            <label for="mensagem">Mensagem:</label>
+            <textarea name="mensagem" id="mensagem" cols="30" rows="10"></textarea>
+        </div>
+
+        <div>
+            <input type="button" id="btnEnviar" name="btnEnviar" value="Enviar">
+        </div>
+
+    </div>
+
+    <script src="https://unpkg.com/imask"></script>
+
+    <script>
+        var phoneMask = IMask(
+            document.getElementById("celular"), {
+            mask: '(00) 00000-0000'
+        });
+
+        function verificaEmail(campo){
+            var email = campo.value;
+            //alert(email);
+
+            if(!email.includes('@') || !email.includes(".com")){
+                document.getElementById("msgEmail").innerHTML = "Email Inválido!";
+            } 
+            else{
+                document.getElementById("msgEmail").innerHTML = "Email Válido.";
+            }
+
+            
+        }
+
+
+    </script>
+</body>
+
+</html>
