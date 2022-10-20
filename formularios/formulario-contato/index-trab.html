@@ -12,7 +12,7 @@
 
 <body>
     <div class="div-principal">
-        <h1>Formulário de Contato</h1>
+        <h1>Contate-nos</h1>
 
         <form method="post" action="salvar.html">
             <div>
@@ -29,7 +29,7 @@
                 <span id="msgEmail" name="msgEmail"></span>
             </div>
 
-            <div>
+            <div id="div-celular">
                 <label for="celular">Celular:</label>
                 <br>
                 <input type="tel" id="celular" name="celular" size="50">
@@ -71,8 +71,6 @@
             else {
                 document.getElementById("msgEmail").innerHTML = ""; //limpando o campo
             }
-
-            //alert(document.getElementById("msgEmail").textContent);
 
             //retirando os espaços:
             campo.value = campo.value.replace(/ /g, ""); //retira todos os espaços em vez de só o primeiro
