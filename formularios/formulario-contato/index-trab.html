@@ -101,28 +101,28 @@
                 if (email.value == "") {
                     alert("Insira seu E-mail!");
                     email.focus();
-                } else{
-                    if(celular.value==""){
+                } else {
+                    if (celular.value == "") {
                         alert("Insira seu número de Celular!");
                         celular.focus();
-                    } 
-                    else{
-                        if(msg.value==""){
+                    }
+                    else {
+                        if (msg.value == "") {
                             alert("Não esqueça de sua mensagem :)");
                             msg.focus();
+                        } else {
+                            alert("Mensagem Enviada!");
+
+                            // Limpando os campos:
+                            nome.value = "";
+                            email.value = "";
+                            celular.value = "";
+                            msg.value = "";
                         }
                     }
                 }
 
             }
-
-            alert("Mensagem Enviada!");
-
-            // Limpando os campos:
-            nome.value = "";
-            email.value = "";
-            celular.value = "";
-            msg.value = "";            
         }
 
 
