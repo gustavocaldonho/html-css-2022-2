@@ -19,6 +19,10 @@ h1{
     color: red;
 }
 
+#msgArea{
+    margin-left: 355px;
+}
+
 #btnEnviar{
     margin-left: 170px;
 }
