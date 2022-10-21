@@ -1,33 +1,38 @@
-div{
-    padding: 5px;
-    margin-bottom: 10px;
-}
-
 body{
-    margin-top: 40px;
+    margin-top: 15px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #41085e;
     background-color: blueviolet;
 }
 
-h1{
-    margin-left: 115px;
+div{
+    padding: 5px;
+    margin-bottom: 10px;
+    /* border: 2px green solid; */
 }
 
-input{
-    height: 20px;
-    border: 2px solid #650096;
-    border-radius: 0.5em;
-    box-shadow: #650096 0.3em 0.3em 0.3em 
+h1{
+    font-size: 40px;
+    margin-left: 80px;
+    margin-bottom: 10px;
+    margin-top: 15px;
+    /* border: 2px green solid; */
 }
 
 textarea{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 17px;
     border: 2px solid #650096;
+    margin: auto;
     border-radius: 0.5em;
+    resize: none;
+    
     /* box-shadow: #650096 0.3em 0.3em 0.3em  */
 }
 
 .div-principal{
-    width: 30%;
-    height: 100gh;
+    width: 400px;
+    height: 90gh;
     margin-left: auto;
     margin-right: auto;
     background-color: white;
@@ -35,8 +40,19 @@ textarea{
     /* border: 2px green solid; */
 }
 
-.div-celular{
-    margin-top: 200px;
+#nomeCompleto, #email, #celular{
+    height: 25px;
+    width: 378px;
+    border: 2px solid #650096;
+    border-radius: 0.5em;
+    box-shadow: #650096 0.3em 0.3em 0.3em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 17px;
+}
+
+#div-email{
+    /* border: 2px green solid; */
+    margin-bottom: -7px;
 }
 
 #msgEmail{
@@ -46,9 +62,28 @@ textarea{
 }
 
 #msgArea{
-    margin-left: 355px;
+    margin-left: 345px;
 }
 
-#btnEnviar{
-    margin-left: 170px;
+input[type="button"]{ /*Padrão*/
+    margin-left: 150px;
+    padding: 5px 15px 5px 15px;
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-radius: 20px;
+    background-color: #650096;
+    color: white;
+    /* border: 2px solid green; */
+}
+
+input[type="button"]:hover{ /*Com o cursor em cima*/
+    border: 2px solid #650096;
+    background-color: white;
+    color: #41085e;
+}
+
+input[type="button"]:active{ /*No momento do clique*/
+    border: 2px solid #650096;
+    background-color: #e3d9e9;
+    color: #41085e;
 }
