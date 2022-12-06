@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo-trab.css">
+    <title>Formulário de Contato</title>
+    <!-- Nome, celular (com máscara), e-mail, mensagem. Crie também um botão "Enviar". -->
+</head>
+
+<body>
+    <div class="div-principal">
+        <h1>Contate-nos</h1>
+
+        <form method="post" action="salvar.html">
+            <div>
+                <label for="nomeCompleto">Nome Completo:</label>
+                <br>
+                <input type="text" id="nomeCompleto" name="nomeCompleto" maxlength="100" class="focoBorda">
+            </div>
+
+            <div id="div-email">
+                <label for="email">E-mail:</label>
+                <br>
+                <input type="email" id="email" name="email" onblur="verificaEmail(this)">
+                <br>
+                <span id="msgEmail" name="msgEmail"></span>
+            </div>
+
+            <div>
+                <label for="celular">Celular:</label>
+                <br>
+                <input type="tel" id="celular" name="celular">
+            </div>
+
+            <div>
+                <label for="mensagem">Mensagem:</label>
+                <br>
+                <textarea id="mensagem" name="mensagem" cols="43" rows="10" maxlength="300"
+                    onkeyup="msgContagem(this)"></textarea>
+                <br>
+                <span id="msgArea" name="msgArea">0/300</span>
+            </div>
+
+            <div>
+                <!-- Ao ser clicado, o formulário será resetado (limpo) >>> type="reset"-->
+                <input type="button" id="btnEnviar" name="btnEnviar" value="Enviar" onclick="enviarMsg()">
+            </div>
+
+    </div>
+    </form>
+
+    <script src="https://unpkg.com/imask"></script>
+
+    <script>
+        var phoneMask = IMask(
+            document.getElementById("celular"), {
+            mask: '(00) 00000-0000'
+        });
+
+        function verificaEmail(campo) {
+            var email = campo.value;
+            //alert(email);
+
+            if (!email.includes('@') || !email.includes(".com")) {
+                document.getElementById("msgEmail").innerHTML = "E-mail Inválido!";
+                campo.focus();
+            }
+            else {
+                document.getElementById("msgEmail").innerHTML = ""; //limpando o campo
+            }
+
+            //retirando os espaços:
+            campo.value = campo.value.replace(/ /g, ""); //retira todos os espaços em vez de só o primeiro
+
+        }
+
+        function msgContagem(campo) {
+            var texto = campo.value;
+            var contador = texto.length;
+
+            document.getElementById("msgArea").innerHTML = contador + "/300";
+        }
+
+        function enviarMsg() {
+            var nome = document.getElementById("nomeCompleto");
+            var email = document.getElementById("email");
+            var celular = document.getElementById("celular");
+            var msg = document.querySelector("#mensagem");
+            //alert(msg);
+
+            // Verificando se todos os campos foram preenchidos:
+            if (nome.value == "") {
+                alert("ATENÇÃO: Insira seu Nome Completo!");
+                nome.focus();
+            } else {
+                if (email.value == "") {
+                    alert("ATENÇÃO: Insira seu E-mail!");
+                    email.focus();
+                } else {
+                    if (celular.value == "") {
+                        alert("ATENÇÃO: Insira seu número de Celular!");
+                        celular.focus();
+                    }
+                    else {
+                        if (msg.value == "") {
+                            alert("Não esqueça de sua mensagem :)");
+                            msg.focus();
+                        } else {
+                            alert("Mensagem Enviada!");
+
+                            // Limpando os campos:
+                            nome.value = "";
+                            email.value = "";
+                            celular.value = "";
+                            msg.value = "";
+                            document.getElementById("msgArea").innerHTML =  "0/300"
+
+                        }
+                    }
+                }
+
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>
