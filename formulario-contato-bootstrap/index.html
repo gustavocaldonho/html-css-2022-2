@@ -30,7 +30,8 @@
                 </ul>
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search">
-                    <button class="btn btn-outline-success" style="background-color: #CFE2FF;" type="submit">Pesquisar</button>
+                    <button class="btn btn-outline-success" style="background-color: #CFE2FF;"
+                        type="submit">Pesquisar</button>
                 </form>
             </div>
         </div>
@@ -42,25 +43,26 @@
 
     <div class="div-central">
         <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="floatingInput" required placeholder="Fulano da Silva">
-            <label for="floatingInput">Nome</label>
+            <input type="text" class="form-control" id="nomeCompleto" required placeholder="Fulano da Silva">
+            <label for="nomeCompleto">Nome</label>
         </div>
         <div class="form-floating mb-3">
             <input type="tel" class="form-control" id="celular" required placeholder="(99) 99999-9999">
             <label for="celular">Celular</label>
         </div>
         <div class="form-floating">
-            <input type="email" class="form-control" id="floatingPassword" required placeholder="name@example.com">
-            <label for="floatingPassword">E-mail</label>
+            <input type="email" class="form-control" id="email" required placeholder="name@example.com">
+            <label for="email">E-mail</label>
         </div>
         <div class="my-3">
             <label for="texto" class="form-label">Mensagem</label>
-            <textarea class="form-control" id="texto" rows="6" maxlength="300" style="resize: none;" required onkeyup="msgContagem(this)"></textarea>
+            <textarea class="form-control" id="texto" rows="6" maxlength="300" style="resize: none;" required
+                onkeyup="msgContagem(this)"></textarea>
             <span id="msgArea" name="msgArea">0/300</span>
         </div>
 
-        <button type="button" class="btn btn-primary d-grid gap-2 mx-auto" style="margin-top: -10px;" data-bs-toggle="modal"
-            data-bs-target="#exampleModal">Enviar</button>
+        <button type="button" class="btn btn-primary d-grid gap-2 mx-auto" style="margin-top: -10px;"
+            data-bs-toggle="modal" data-bs-target="#exampleModal">Enviar</button>
 
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -76,7 +78,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                        <button type="button" class="btn btn-primary">Enviar Mensagem</button>
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="limparCampos()">Enviar Mensagem</button>
                     </div>
                 </div>
             </div>
@@ -100,6 +102,20 @@
             var contador = texto.length;
 
             document.getElementById("msgArea").innerHTML = contador + "/300";
+        }
+
+        function limparCampos() {
+            var nome = document.getElementById("nomeCompleto");
+            var email = document.getElementById("email");
+            var celular = document.getElementById("celular");
+            var msg = document.querySelector("#texto");
+
+            // Limpando os campos:
+            nome.value = "";
+            email.value = "";
+            celular.value = "";
+            msg.value = "";
+            document.getElementById("msgArea").innerHTML = "0/300"
         }
 
     </script>
