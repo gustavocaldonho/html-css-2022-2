@@ -12,10 +12,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 </head>
 
-<body>
+<body class="body">
 
-    <nav class="navbar navbar-expand-lg bg-light">
-        <!--style="background-color: #650096;" -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Navbar</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -30,8 +29,8 @@
                     </li>
                 </ul>
                 <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
+                    <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search">
+                    <button class="btn btn-outline-success" style="background-color: #CFE2FF;" type="submit">Pesquisar</button>
                 </form>
             </div>
         </div>
@@ -43,24 +42,24 @@
 
     <div class="div-central">
         <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="floatingInput" placeholder="Fulano da Silva">
+            <input type="text" class="form-control" id="floatingInput" required placeholder="Fulano da Silva">
             <label for="floatingInput">Nome</label>
         </div>
         <div class="form-floating mb-3">
-            <input type="tel" class="form-control" id="celular" placeholder="(99) 99999-9999">
+            <input type="tel" class="form-control" id="celular" required placeholder="(99) 99999-9999">
             <label for="celular">Celular</label>
         </div>
         <div class="form-floating">
-            <input type="email" class="form-control" id="floatingPassword" placeholder="name@example.com">
+            <input type="email" class="form-control" id="floatingPassword" required placeholder="name@example.com">
             <label for="floatingPassword">E-mail</label>
         </div>
         <div class="my-3">
             <label for="texto" class="form-label">Mensagem</label>
-            <textarea class="form-control" id="texto" rows="6" maxlength="300" onkeyup="msgContagem(this)"></textarea>
+            <textarea class="form-control" id="texto" rows="6" maxlength="300" style="resize: none;" required onkeyup="msgContagem(this)"></textarea>
             <span id="msgArea" name="msgArea">0/300</span>
         </div>
 
-        <button type="button" class="btn btn-primary d-grid gap-2 mx-auto" data-bs-toggle="modal"
+        <button type="button" class="btn btn-primary d-grid gap-2 mx-auto" style="margin-top: -10px;" data-bs-toggle="modal"
             data-bs-target="#exampleModal">Enviar</button>
 
         <!-- Modal -->
@@ -68,7 +67,7 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">Informações de Contato</h1>
+                        <h1 class="modal-title fs-4" id="exampleModalLabel">Informações de Contato</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
